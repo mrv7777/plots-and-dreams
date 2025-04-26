@@ -6,16 +6,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to DreamLand Properties</h1>
-    <p>We offer the best land deals in prime locations at unbeatable prices. Own your piece of paradise today!</p>
+<nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('listings') }}">Listings</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+</nav>
+<section>
+    <h2>Why Choose Us?</h2>
+    <ul>
+        <li>Prime Locations</li>
+        <li>Affordable Prices</li>
+        <li>Verified Legal Papers</li>
+        <li>Easy Financing Options</li>
+        <li>Instant Site Visit Scheduling</li>
+    </ul>
+</section>
+<div class="hero">
+    <div class="hero-text">
+        <h1>Welcome to DreamLand Properties</h1>
+        <p>Your Dream Land Awaits</p>
+        <a href="{{ url_for('listings') }}" class="btn">View Listings</a>
+    </div>
+</div>
 
-    <h2>Request a Quote or Site Visit</h2>
-    <form method="POST" action="{{ url_for('get_quote') }}">
-        <input type="text" name="name" placeholder="Your Name" required><br><br>
-        <input type="email" name="email" placeholder="Your Email" required><br><br>
-        <input type="text" name="phone" placeholder="Your Phone Number" required><br><br>
-        <textarea name="requirements" placeholder="Tell us what kind of land you're looking for..." required></textarea><br><br>
-        <button type="submit">Request Info</button>
-    </form>
 </body>
 </html>
