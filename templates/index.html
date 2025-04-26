@@ -2,33 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DreamLand Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dream Lands - Your Future Starts Here{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<nav>
-    <a href="{{ url_for('home') }}">Home</a>
-    <a href="{{ url_for('listings') }}">Listings</a>
-    <a href="{{ url_for('about') }}">About</a>
-    <a href="{{ url_for('contact') }}">Contact</a>
-</nav>
-<section>
-    <h2>Why Choose Us?</h2>
-    <ul>
-        <li>Prime Locations</li>
-        <li>Affordable Prices</li>
-        <li>Verified Legal Papers</li>
-        <li>Easy Financing Options</li>
-        <li>Instant Site Visit Scheduling</li>
-    </ul>
-</section>
-<div class="hero">
-    <div class="hero-text">
-        <h1>Welcome to DreamLand Properties</h1>
-        <p>Your Dream Land Awaits</p>
-        <a href="{{ url_for('listings') }}" class="btn">View Listings</a>
-    </div>
-</div>
+    <div class="overlay"></div>
 
+    <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('listings') }}">Available Plots</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+    </nav>
+
+    <div class="content" id="home">
+        <h1>Find Your Dream Land</h1>
+        <p>Premium land plots available for residential, farming, and investment.</p>
+        <a href="{{ url_for('contact') }}" class="cta-button">Get a Free Quotation</a>
+    </div>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

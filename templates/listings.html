@@ -1,9 +1,69 @@
-{% extends "index.html" %}
-{% block content %}
-<h2>Available Land Listings</h2>
-<ul>
-    <li>Farm Land - 2 Acres near City Center - $50,000</li>
-    <li>Residential Plot - 1200 sqft - $15,000</li>
-    <li>Lake View Land - 5 Acres - $120,000</li>
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Land Listings - DreamLand Properties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="listings-page">
+    <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('listings') }}">Available Plots</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+    </nav>
+    
+    <header class="listings-header">
+        <h1>Available Land Listings</h1>
+        <p>Explore our premium land plots for residential, agricultural, and investment purposes.</p>
+    </header>
+
+    <main class="listings-container">
+        <div class="listing-item">
+            <h3>Farm Land - 2 Acres</h3>
+            <ul>
+                <li><strong>Location:</strong> Near City Center</li>
+                <li><strong>Size:</strong> 2 Acres</li>
+                <li><strong>Type:</strong> Agricultural</li>
+                <li><strong>Features:</strong> Fertile soil, water access, road connectivity</li>
+            </ul>
+        </div>
+
+        <div class="listing-item">
+            <h3>Residential Plot - 1200 sqft</h3>
+            <ul>
+                <li><strong>Location:</strong> Green Valley Residential Area</li>
+                <li><strong>Size:</strong> 1200 sqft</li>
+                <li><strong>Type:</strong> Residential</li>
+                <li><strong>Features:</strong> Close to schools, parks, and shopping centers</li>
+            </ul>
+        </div>
+
+        <div class="listing-item">
+            <h3>Lake View Land - 5 Acres</h3>
+            <ul>
+                <li><strong>Location:</strong> Lakeside Drive</li>
+                <li><strong>Size:</strong> 5 Acres</li>
+                <li><strong>Type:</strong> Scenic/Investment</li>
+                <li><strong>Features:</strong> Stunning lake views, peaceful surroundings, ideal for resorts</li>
+            </ul>
+        </div>
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

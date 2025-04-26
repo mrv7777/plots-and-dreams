@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - DreamLand Properties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h1>Thank you, {{ name }}!</h1>
-    <p>We have received your inquiry. Our team will contact you shortly with the best land options.</p>
-    <a href="{{ url_for('home') }}">Back to Home</a>
+<body class="contact-page">
+    <header class="contact-header">
+        <h1>Thank You, {{ name }}!</h1>
+        <p>We have received your inquiry. Our team will contact you shortly with the best land options.</p>
+    </header>
+
+    <main class="contact-container">
+        <section class="thank-you-message">
+            <h2>We Appreciate Your Interest!</h2>
+            <p>Our team is reviewing your inquiry and will get back to you as soon as possible. In the meantime, feel free to explore our listings or learn more about us.</p>
+            <a href="{{ url_for('listings') }}" class="cta-button">View Listings</a>
+            <a href="{{ url_for('home') }}" class="cta-button">Back to Home</a>
+        </section>
+    </main>
 </body>
 </html>
