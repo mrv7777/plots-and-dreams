@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DreamLand Properties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to DreamLand Properties</h1>
+    <p>We offer the best land deals in prime locations at unbeatable prices. Own your piece of paradise today!</p>
+
+    <h2>Request a Quote or Site Visit</h2>
+    <form method="POST" action="{{ url_for('get_quote') }}">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+        <input type="text" name="phone" placeholder="Your Phone Number" required><br><br>
+        <textarea name="requirements" placeholder="Tell us what kind of land you're looking for..." required></textarea><br><br>
+        <button type="submit">Request Info</button>
+    </form>
+</body>
+</html>
